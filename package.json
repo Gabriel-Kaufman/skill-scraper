@@ -1,0 +1,29 @@
+{
+  "name": "skill-surge-notifier",
+  "version": "0.3.1",
+  "description": "Monitors ClawHub for skills gaining traction and alerts you to surges",
+  "author": "@gkauf_gm",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "skill-surge-notifier": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "SKILL.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "fetch": "node --import tsx/esm src/fetch_trending.ts",
+    "check": "node --import tsx/esm src/surge_check.ts",
+    "status": "node --import tsx/esm src/cli.ts status",
+    "manual": "node --import tsx/esm src/cli.ts manual"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
