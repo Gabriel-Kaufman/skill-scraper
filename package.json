@@ -4,6 +4,7 @@
   "description": "Monitors ClawHub for skills gaining traction and alerts you to surges",
   "author": "@gkauf_gm",
   "license": "ISC",
+  "homepage": "https://github.com/Gabriel-Kaufman/skill-scraper/tree/main",
   "type": "module",
   "bin": {
     "skill-surge-notifier": "./dist/cli.js"
