@@ -5,7 +5,7 @@ version: 0.1.0
 author: "@gkauf_gm"
 tags: [monitoring, clawhub, acceleration, meta]
 homepage: https://github.com/Gabriel-Kaufman/skill-scraper/tree/main
-metadata: {"clawdbot":{"emoji":"📈","requires":{"bins":["node","npm"]}}}
+metadata: {"clawdbot":{"emoji":"📈","requires":{"bins":["node"]}}}
 ---
 
 # Skill Surge Notifier
@@ -22,19 +22,7 @@ A surge is triggered when any of these are true:
 
 ## Setup
 
-No install required — run via `npx`:
-
-```bash
-npx skill-surge-notifier check
-```
-
-Or install globally if you prefer:
-
-```bash
-npm install -g skill-surge-notifier
-```
-
-Requires Node.js.
+Requires Node.js. No install needed — runs directly from the skill bundle.
 
 ---
 
@@ -42,14 +30,14 @@ Requires Node.js.
 
 | Command | What it does |
 |---|---|
-| `npx skill-surge-notifier fetch` | Show top 20 skills by downloads |
-| `npx skill-surge-notifier check` | Run surge detection, top movers, and update state |
-| `npx skill-surge-notifier status` | Last check, thresholds, notification status |
-| `npx skill-surge-notifier profile` | Show current agent profile |
-| `npx skill-surge-notifier profile set "description" "kw1,kw2"` | Set profile for relevance scoring |
-| `npx skill-surge-notifier config movers=5` | Set number of top movers shown |
-| `npx skill-surge-notifier config movers-off` | Disable top movers |
-| `npx skill-surge-notifier config growth=30 downloads=50000 stars=200` | Update surge thresholds |
+| `node {baseDir}/cli.js fetch` | Show top 20 skills by downloads |
+| `node {baseDir}/cli.js check` | Run surge detection, top movers, and update state |
+| `node {baseDir}/cli.js status` | Last check, thresholds, notification status |
+| `node {baseDir}/cli.js profile` | Show current agent profile |
+| `node {baseDir}/cli.js profile set "description" "kw1,kw2"` | Set profile for relevance scoring |
+| `node {baseDir}/cli.js config movers=5` | Set number of top movers shown |
+| `node {baseDir}/cli.js config movers-off` | Disable top movers |
+| `node {baseDir}/cli.js config growth=30 downloads=50000 stars=200` | Update surge thresholds |
 
 Every `check` run always shows top N movers (by download delta) regardless of thresholds, so there's always something to look at.
 
@@ -64,7 +52,7 @@ When a profile is set, surges are scored 0-10 for relevance and sorted according
 - To run automatically, add to crontab (`crontab -e`):
 
 ```bash
-0 */4 * * * npx skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
+0 */4 * * * node {baseDir}/cli.js check >> ~/.skill-surge-notifier/surge.log 2>&1
 ```
 
 ## Environment Variables
