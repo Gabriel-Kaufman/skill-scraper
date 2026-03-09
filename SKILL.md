@@ -22,7 +22,7 @@ A surge is triggered when any of these are true:
 
 ## Setup
 
-Requires Node.js. No install needed — runs directly from the skill bundle.
+Requires Node.js 18+. No install needed — runs directly from the skill bundle.
 
 ---
 
