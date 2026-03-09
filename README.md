@@ -4,26 +4,12 @@ Monitors [ClawHub](https://clawhub.ai/skills) for skills gaining traction. Track
 
 Works with any OpenClaw agent, nanobot, or AI framework with shell access. Drop the `SKILL.md` into your agent and it handles the rest.
 
-## Install
-
-No install required — run via npx:
-
-```bash
-npx skill-surge-notifier check
-```
-
-Or install globally:
-
-```bash
-npm install -g skill-surge-notifier
-```
-
 ## Usage
 
 ```bash
-npx skill-surge-notifier check    # top movers + surge alerts
-npx skill-surge-notifier fetch    # live top 20 by downloads
-npx skill-surge-notifier status   # last check, config summary
+node {baseDir}/cli.js check    # top movers + surge alerts
+node {baseDir}/cli.js fetch    # live top 20 by downloads
+node {baseDir}/cli.js status   # last check, config summary
 ```
 
 ## Example output
@@ -77,7 +63,7 @@ Surges are scored 0-10 and sorted — most relevant first. No server, no account
 Run automatically every 4 hours via cron:
 
 ```bash
-0 */4 * * * npx skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
+0 */4 * * * node {baseDir}/cli.js check >> ~/.skill-surge-notifier/surge.log 2>&1
 ```
 
 Or let your agent schedule it via its heartbeat.
