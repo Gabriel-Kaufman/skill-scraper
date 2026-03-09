@@ -22,6 +22,14 @@ A surge is triggered when any of these are true:
 
 ## Setup
 
+No install required — run via `npx`:
+
+```bash
+npx skill-surge-notifier check
+```
+
+Or install globally if you prefer:
+
 ```bash
 npm install -g skill-surge-notifier
 ```
@@ -34,14 +42,14 @@ Requires Node.js.
 
 | Command | What it does |
 |---|---|
-| `skill-surge-notifier fetch` | Show top 20 skills by downloads |
-| `skill-surge-notifier check` | Run surge detection, top movers, and update state |
-| `skill-surge-notifier status` | Last check, thresholds, notification status |
-| `skill-surge-notifier profile` | Show current agent profile |
-| `skill-surge-notifier profile set "description" "kw1,kw2"` | Set profile for relevance scoring |
-| `skill-surge-notifier config movers=5` | Set number of top movers shown |
-| `skill-surge-notifier config movers-off` | Disable top movers |
-| `skill-surge-notifier config growth=30 downloads=50000 stars=200` | Update surge thresholds |
+| `npx skill-surge-notifier fetch` | Show top 20 skills by downloads |
+| `npx skill-surge-notifier check` | Run surge detection, top movers, and update state |
+| `npx skill-surge-notifier status` | Last check, thresholds, notification status |
+| `npx skill-surge-notifier profile` | Show current agent profile |
+| `npx skill-surge-notifier profile set "description" "kw1,kw2"` | Set profile for relevance scoring |
+| `npx skill-surge-notifier config movers=5` | Set number of top movers shown |
+| `npx skill-surge-notifier config movers-off` | Disable top movers |
+| `npx skill-surge-notifier config growth=30 downloads=50000 stars=200` | Update surge thresholds |
 
 Every `check` run always shows top N movers (by download delta) regardless of thresholds, so there's always something to look at.
 
@@ -56,7 +64,7 @@ When a profile is set, surges are scored 0-10 for relevance and sorted according
 - To run automatically, add to crontab (`crontab -e`):
 
 ```bash
-0 */4 * * * skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
+0 */4 * * * npx skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
 ```
 
 ## Environment Variables

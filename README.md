@@ -6,6 +6,14 @@ Works with any OpenClaw agent, nanobot, or AI framework with shell access. Drop 
 
 ## Install
 
+No install required — run via npx:
+
+```bash
+npx skill-surge-notifier check
+```
+
+Or install globally:
+
 ```bash
 npm install -g skill-surge-notifier
 ```
@@ -13,9 +21,9 @@ npm install -g skill-surge-notifier
 ## Usage
 
 ```bash
-skill-surge-notifier check    # top movers + surge alerts
-skill-surge-notifier fetch    # live top 20 by downloads
-skill-surge-notifier status   # last check, config summary
+npx skill-surge-notifier check    # top movers + surge alerts
+npx skill-surge-notifier fetch    # live top 20 by downloads
+npx skill-surge-notifier status   # last check, config summary
 ```
 
 ## Example output
@@ -69,7 +77,7 @@ Surges are scored 0-10 and sorted — most relevant first. No server, no account
 Run automatically every 4 hours via cron:
 
 ```bash
-0 */4 * * * skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
+0 */4 * * * npx skill-surge-notifier check >> ~/.skill-surge-notifier/surge.log 2>&1
 ```
 
 Or let your agent schedule it via its heartbeat.
