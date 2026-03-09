@@ -1,6 +1,6 @@
 {
   "name": "skill-surge-notifier",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Monitors ClawHub for skills gaining traction and alerts you to surges",
   "author": "@gkauf_gm",
   "license": "ISC",
