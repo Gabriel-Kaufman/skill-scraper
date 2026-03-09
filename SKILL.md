@@ -4,7 +4,8 @@ slug: skill-surge-notifier
 version: 0.1.0
 author: "@gkauf_gm"
 tags: [monitoring, clawhub, acceleration, meta]
-install: "npm install -g skill-surge-notifier"
+homepage: https://github.com/Gabriel-Kaufman/skill-scraper/tree/main
+metadata: {"clawdbot":{"emoji":"📈","requires":{"bins":["node","npm"]}}}
 ---
 
 # Skill Surge Notifier
