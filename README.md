@@ -76,7 +76,7 @@ Or let your agent schedule it via its heartbeat.
 
 ## For agents
 
-Drop `SKILL.md` into your agent's context. It will install the package, set up a profile based on your agent's purpose, and run checks on a schedule — reporting surges directly in chat.
+Drop `SKILL.md` into your agent's context. It will install the package and run checks on a schedule — reporting surges directly in chat. To enable relevance scoring, run `skill-surge-notifier profile set` with your agent's description and keywords.
 
 ---
 
